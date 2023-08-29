@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cocktail Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+  </head>
+
+  <body>
+    <div>
+        <h1 class="title">Cocktail Recipe Recommender</h1>
+    </div>
+    <div class="form">
+        <p>Please enter a cocktail that you would like similar searches to.</p>
+        <form action="/" method='POST'>
+            <input class="form_text" type="text" name="search" value="">
+            <input class="submit" type="submit" value="Search">
+        </form>
+    </div>
+
+    <div class="results">
+      {% if name %}  
+      <h1>Recipe Found: {{name}}</h1>
+      <p>Similarity to your search: {{score}}</p>
+        <tr class="row">
+          <th class="table_name">
+            <h4>Ingredients List</h4>
+            {% for i in ing_keys %}
+            <div class="list">
+              {{ ing.get(i) }}
+              {{ i }}
+            </div>
+            {% endfor %}
+            <h4>Instructions</h4>
+            {{ ins }}
+          </th>
+        </tr>
+      {% endif %}
+    </div>
+
+    <div class="footer">
+      <p>All cocktail recipes and instructions are from
+        <a href="http://www.drinksmixer.com" target="_blank">
+          DrinksMixer
+        </a>
+      </p>
+    </div>
+  </body>
+</html>
