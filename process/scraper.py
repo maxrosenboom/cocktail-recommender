@@ -40,8 +40,6 @@ rec_doc = open("../data/cocktail-recipes.pickle", "wb")
 ing_doc = open("../data/cocktail-ingredients.pickle", "wb")
 pickle.dump(cocktail_urls, url_doc)
 pickle.dump(cocktail_names, names_doc)
-#pickle.dump(cocktail_recipes, rec_doc) #UNCOMMENT BEFORE FINAL SUBMISSION
-#pickle.dump(cocktail_ingredients, ing_doc) #UNCOMMENT BEFORE FINAL SUBMISSIOn
 url_doc.close()      
 names_doc.close()
 rec_doc.close()
